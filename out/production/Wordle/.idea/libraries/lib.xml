@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.cache/jdt-language-server/config/org.eclipse.osgi/50/0/.cp/lib/remark-1.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/.cache/jdt-language-server/config/org.eclipse.osgi/50/0/.cp/lib/jsoup-1.14.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

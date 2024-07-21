@@ -5,6 +5,7 @@
 /out/
 .idea/
 *.iml
+*.mf
 
 # Ignore Java Class Files
 *.class

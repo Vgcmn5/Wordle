@@ -1,5 +1,7 @@
 import java.io.BufferedReader;
-import java.io.FileReader;
+//import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,12 +14,14 @@ public class SpellChecker {
     public String[] getDictionary() { return dictionary; }
     public String getWordleAnswer() { return wordleAnswer; }
 
+
+
     public SpellChecker(int wordLength) {
       try {
         dictionary = readLines("Words/dictionary.txt");
         wordleList = readLines("Words/WordleList.txt");
         if (wordLength == 5){
-          // pick a random 5 letter word from the wordle answer list
+          // pick a random 5-letter word from the wordle answer list
           wordleAnswer = wordleList[(int)(Math.random() * wordleList.length)].toUpperCase();
         } else {
           // filter to only words of the specified length
@@ -96,22 +100,26 @@ public class SpellChecker {
       return numGuessed == countChar(chr, wordleAnswer);
     }
 
-
-
+    // get contents of text files
     public static String[] readLines(String filename) throws IOException {
-      FileReader fileReader = new FileReader(filename);
-         
-      BufferedReader bufferedReader = new BufferedReader(fileReader);
-      List<String> lines = new ArrayList<String>();
-      String line = null;
-         
-      while ((line = bufferedReader.readLine()) != null) {
-        //if (line.length() == 5) { 
-          lines.add(line); //}
+      //FileReader fileReader = new FileReader(filename);
+      InputStream inputStream = Main.class.getResourceAsStream(filename);
+
+      if (inputStream != null) {
+          BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+          List<String> lines = new ArrayList<String>();
+          String line;
+
+          while ((line = reader.readLine()) != null) {
+              lines.add(line);
+          }
+
+          reader.close();
+          return lines.toArray(new String[lines.size()]);
+      } else {
+          Text.showError("An unknown error occurred when accessing the word list.");
+          return null;
       }
-         
-      bufferedReader.close();
-      return lines.toArray(new String[lines.size()]);
     }
       
     

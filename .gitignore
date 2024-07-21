@@ -8,3 +8,7 @@
 
 # Ignore Java Class Files
 *.class
+
+# Ignore releases and jar files
+/Releases
+*.jar

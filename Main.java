@@ -23,7 +23,7 @@ class Main {
     String word = checker.getWordleAnswer();
     String alphabet = "QWERTYUIOP\nASDFGHJKL\n ZXCVBNM\n";
     String[] allGuesses = new String[numGuesses];
-    String result = "";
+    //String result = "";
 
     // guess loop
     int guessIndex;
@@ -34,7 +34,7 @@ class Main {
       if (!guess.matches("[A-Z]{"+word.length()+"}") || !checker.isWord(guess)) {
         guessIndex++;
         showHints(allGuesses, alphabet, guessIndex);
-        Text.showError("Guess must be a real " + word.length() + " letter word\n");
+        Text.showError("Guess must be a real " + word.length() + "-letter word\n");
         Thread.sleep(1000); // waits 1000 milliseconds (1 second)
         guessIndex-=2;  continue; // returns to the same guess index after error
       }

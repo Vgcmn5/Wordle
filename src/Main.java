@@ -17,7 +17,7 @@ class Main {
       System.out.println(Text.YELLOW + "Warning: Word length is too long! Defaulting to 5." + Text.RESET);
     }
 
-    System.out.println(Text.CLEAR + "Wordle: You have 6 tries to guess the " + wordLength + " letter word!\n");
+    System.out.println(Text.CLEAR + "Wordle: You have 6 tries to guess the " + wordLength + "-letter word!\n");
     SpellChecker checker = new SpellChecker(wordLength);
 
     String word = checker.getWordleAnswer();

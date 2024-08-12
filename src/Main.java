@@ -3,7 +3,7 @@
 // - Give a warning if there are not very many words of the specified length in the dictionary
 
 // KNOWN ISSUES:
-// - If the word is guessed correctly on the FIRST try, it will not turn green
+// - If the word is guessed correctly on the FIRST try, it will not turn green (VERY unlikely though)
 import java.util.*;
 class Main {
   public static void main(String[] args) throws InterruptedException {
@@ -44,7 +44,7 @@ class Main {
       alphabet = checker.analyzeGuess(guess, alphabet)[1];
       if (guess.equals(word)) {
         showHints(allGuesses, alphabet, guessIndex);
-        System.out.print("\nCongratulations!\n\nGuesses: " + (guessIndex+1) + "/" + numGuesses);
+        System.out.print("\nCongratulations! The word is " + word + "!\n\nGuesses: " + (guessIndex+1) + "/" + numGuesses);
         break;
       } else if (guessIndex+1 == numGuesses) {
         showHints(allGuesses, alphabet, guessIndex);

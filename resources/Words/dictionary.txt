@@ -39661,13 +39661,10 @@ faenas
 faerie
 faeries
 faery
-fag
 fagged
 fagging
-faggot
 faggoted
 faggoting
-faggots
 faggy
 fagin
 fagins
@@ -73278,8 +73275,6 @@ niggarded
 niggarding
 niggardly
 niggards
-nigger
-niggers
 niggle
 niggled
 niggler
